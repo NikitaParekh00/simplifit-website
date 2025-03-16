@@ -6,38 +6,52 @@ const items = [
   {
     id: 1,
     img: "/p1.jpg",
-    title: "Full Stack Blog Application",
+    title: "Enforcement Dept, Reserve Bank of India",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
     link: "/",
   },
   {
     id: 2,
     img: "/p2.jpg",
-    title: "School Management System",
+    title: "Witty Hostel, Witty Group",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
     link: "/",
   },
   {
     id: 3,
     img: "/p3.jpg",
-    title: "Real-time Chat Application",
+    title: "Enmaac Advisors",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
     link: "/",
   },
   {
     id: 4,
     img: "/p4.jpg",
-    title: "Social Media Project",
+    title: "J.Kala & Associates",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
     link: "/",
   },
   {
     id: 5,
     img: "/p5.jpg",
-    title: "Animated Portfolio Website",
+    title: "Simplifit Cricket Tournament Season 1",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
     link: "/",
   },
+  // {
+  //   id: 6,
+  //   img: "/p5.jpg",
+  //   title: "Adinath Digambar Jain Mandir - Cricket Tournament",
+  //   desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+  //   link: "/",
+  // },
+  // {
+  //   id: 7,
+  //   img: "/p5.jpg",
+  //   title: "Sanmati Valuation",
+  //   desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+  //   link: "/",
+  // },
 ];
 
 const imgVariants = {
@@ -96,9 +110,9 @@ const ListItem = ({ item }) => {
       >
         <motion.h1 variants={textVariants}>{item.title}</motion.h1>
         <motion.p variants={textVariants}>{item.desc}</motion.p>
-        <motion.a variants={textVariants} href={item.link}>
+        {/* <motion.a variants={textVariants} href={item.link}>
           <button>View Project</button>
-        </motion.a>
+        </motion.a> */}
       </motion.div>
     </div>
   );

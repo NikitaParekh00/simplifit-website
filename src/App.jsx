@@ -5,6 +5,7 @@
 
 import { lazy, Suspense } from "react";
 import LazyLoad from "react-lazyload";
+import Navbar from "./components/navbar/Navbar";
 
 const Hero = lazy(() => import("./components/hero/Hero"));
 const Services = lazy(() => import("./components/services/Services"));
@@ -14,30 +15,31 @@ const Contact = lazy(() => import("./components/contact/Contact"));
 const App = () => {
   return (
     <div className="container">
+      <Navbar/>
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#home">
+          <section id="home">
             <Hero />
           </section>
         </LazyLoad>
       </Suspense>
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#services">
+          <section id="services">
             <Services />
           </section>{" "}
         </LazyLoad>
       </Suspense>
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"600vh"} offset={-100}>
-          {/* <section id="#portfolio"> */}
+          {/* <section id="portfolio"> */}
           <Portfolio />
-          {/* </section> */}{" "}
+          {/* </section>{" "} */}
         </LazyLoad>
       </Suspense>
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#contact">
+          <section id="contact">
             <Contact />
           </section>{" "}
         </LazyLoad>

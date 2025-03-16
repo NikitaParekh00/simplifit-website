@@ -40,7 +40,8 @@
 .hTitle {
   margin-top: 50px;
   font-size: 100px;
-  color: pink;
+  /* color: pink; */
+  color:rgb(194, 17, 17)
 }
 
 .hTitle span {
@@ -77,6 +78,7 @@
 
 .hSection.right {
   align-items: end;
+  padding-top: 60px;
 }
 
 .follow {

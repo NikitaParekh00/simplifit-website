@@ -41,19 +41,49 @@ const services = [
   {
     id: 1,
     img: "/service1.png",
-    title: "Web Development",
+    title: "Corporate Stretching Session",
     counter: 35,
   },
   {
     id: 2,
     img: "/service2.png",
-    title: "Product Design",
+    title: "Nutrition Consultation",
     counter: 23,
   },
   {
     id: 3,
     img: "/service3.png",
-    title: "Branding",
+    title: "Corporate Fitness Activity",
+    counter: 46,
+  },
+  {
+    id: 4,
+    img: "/service2.png",
+    title: "Corporate Team Bonding Activities",
+    counter: 23,
+  },
+  {
+    id: 5,
+    img: "/service3.png",
+    title: "Outdoor Wellness Sessions",
+    counter: 46,
+  },
+  {
+    id: 6,
+    img: "/service3.png",
+    title: "Workplace Wellness Programs",
+    counter: 46,
+  },
+  {
+    id: 7,
+    img: "/service3.png",
+    title: "Health and Wellness Retreats",
+    counter: 46,
+  },
+  {
+    id: 8,
+    img: "/service3.png",
+    title: "Inter-company tournaments",
     counter: 46,
   },
 ];
@@ -64,7 +94,8 @@ const Services = () => {
   const isInView = useInView(ref, { margin: "-200px" });
   return (
     <div className="services" ref={ref}>
-      <div className="sSection left">
+      <div className="sSection left"
+      >
         <motion.h1
           variants={textVariants}
           animate={isInView ? "animate" : "initial"}
@@ -89,7 +120,7 @@ const Services = () => {
               </div>
               <div className="serviceInfo">
                 <h2>{service.title}</h2>
-                <h3>{service.counter} Projects</h3>
+                <h3>{service.counter} Events</h3>
               </div>
             </motion.div>
           ))}

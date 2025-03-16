@@ -20,6 +20,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-height: 300px; /* Adjust height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* Firefox scrollbar */
+  scrollbar-color: #888 #f0f0f0; /* Scrollbar colors */
 }
 
 .service {
