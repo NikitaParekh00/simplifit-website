@@ -15,7 +15,7 @@ const Contact = lazy(() => import("./components/contact/Contact"));
 const App = () => {
   return (
     <div className="container">
-      <Navbar/>
+      {/* <Navbar/> */}
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"100vh"} offset={-100}>
           <section id="home">
