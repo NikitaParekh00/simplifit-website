@@ -57,11 +57,12 @@ const Hero = () => {
           animate="animate"
           className="awards"
         >
-          {/* <motion.h2 variants={awardVariants}>Top Rated Designer</motion.h2> */}
-          <motion.h2 variants={awardVariants}>Recreational Athelete</motion.h2>
+          <motion.h2 variants={awardVariants}>Welcome To SimpliFit</motion.h2>
+          {/* <motion.h2 variants={awardVariants}>Welcome to Simplifit – Your Partner in Corporate Wellness
+      </motion.h2> */}
 
           <motion.p variants={awardVariants}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Let us help you create a workplace that fosters physical and mental well-being while nurturing a positive and connected company culture.
           </motion.p>
           {/* <motion.div variants={awardVariants} className="awardList">
             <motion.img variants={awardVariants} src="/award1.png" alt="" />
