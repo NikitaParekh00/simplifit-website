@@ -269,6 +269,19 @@
   .hSection.right {
     justify-content: end;
   }
+  @media (max-width: 768px) {
+    .hImg {
+      height: 100%; /* Reduce height for mobile */
+      max-width: 80%; /* Limit width */
+    }
+  
+    .hImg img {
+      width: 100%;
+      height: auto; /* Maintain aspect ratio */
+      object-fit: contain; /* Prevent cropping */
+    }
+  }
+  
 
   /* .follow,
   .bubbleContainer,
