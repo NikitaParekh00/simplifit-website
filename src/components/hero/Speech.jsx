@@ -12,12 +12,13 @@ const Speech = () => {
         <TypeAnimation
           sequence={[
             1000,
-            "Chartered Accountant turned Fitness Coach ",
-            1000,
-            "Mixing Numbers with Dumbbells!!!. ",
-            1000,
+            "Chartered Accountant and Fitness Coach \n\nStrengthening your Wealth, Strengthening your Health ",
+            // 1000,
+            // "Strengthing your Wealth, Strengthening your Health",
+            // 1000,
           ]}
           wrapper="span"
+          className="type-animation-text"
           speed={40}
           deletionSpeed={60}
           // omitDeletionAnimation

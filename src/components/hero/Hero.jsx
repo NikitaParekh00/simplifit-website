@@ -45,10 +45,11 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
           className="hTitle"
+          style={{ lineHeight: "1", marginBottom: "0" }} // Ensures no extra space
         >
-          Hey There,
+          <span style={{ color: "rgb(194, 17, 17)" }}>Hey There,</span>
           <br />
-          <span>I'm Harshita!</span>
+          <span>I'm CA Harshita Kala!</span>
         </motion.h1>
         {/* AWARDS */}
         <motion.div
@@ -62,7 +63,8 @@ const Hero = () => {
       </motion.h2> */}
 
           <motion.p variants={awardVariants}>
-          Let us help you create a workplace that fosters physical and mental well-being while nurturing a positive and connected company culture.
+            Let us help you create a workplace that fosters physical and mental
+            well-being while nurturing a positive and connected company culture.
           </motion.p>
           {/* <motion.div variants={awardVariants} className="awardList">
             <motion.img variants={awardVariants} src="/award1.png" alt="" />
@@ -116,14 +118,26 @@ const Hero = () => {
           animate="animate"
           className="follow"
         >
-          <motion.a variants={followVariants} href="https://www.instagram.com/nikki_parekh/" target="_blank">
+          <motion.a
+            variants={followVariants}
+            href="https://www.instagram.com/simpli_fit_/"
+            target="_blank"
+          >
             <img src="/instagram.png" alt="" />
           </motion.a>
-          <motion.a variants={followVariants} href="/">
-            <img src="/facebook.png" alt="" />
+          <motion.a
+            variants={followVariants}
+            href="https://api.whatsapp.com/send?phone=918591996356"
+            target="_blank"
+          >
+            <img src="/whatsapp.png" alt="" />
           </motion.a>
-          <motion.a variants={followVariants} href="/">
-            <img src="/youtube.png" alt="" />
+          <motion.a
+            variants={followVariants}
+            href="tel:+917506256356"
+            target="_blank"
+          >
+            <img src="/call.png" alt="Call" />
           </motion.a>
           <motion.div variants={followVariants} className="followTextContainer">
             <div className="followText">FOLLOW ME</div>
@@ -132,7 +146,7 @@ const Hero = () => {
         {/* BUBBLE */}
         <Speech />
         {/* CERTIFICATE */}
-        <motion.div
+        {/* <motion.div
           animate={{ opacity: [0, 1] }}
           transition={{ duration: 1 }}
           className="certificate"
@@ -143,7 +157,7 @@ const Hero = () => {
           PROFESSIONAL
           <br />
           COACH
-        </motion.div>
+        </motion.div> */}
         {/* CONTACT BUTTON */}
         <motion.a
           href="/#contact"
