@@ -239,7 +239,7 @@
   .bubbleContainer {
     width: 100%;
     position: absolute;
-    bottom: 20px; /* Adjust as needed */
+    bottom: 5px; /* Adjust as needed */
     left: 0;
     right: 0;
     display: flex;
