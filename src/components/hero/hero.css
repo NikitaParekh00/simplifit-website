@@ -270,9 +270,9 @@
     justify-content: end;
   }
 
-  .follow,
+  /* .follow,
   .bubbleContainer,
   .certificate {
     display: none;
-  }
+  } */
 }
