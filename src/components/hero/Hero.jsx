@@ -58,7 +58,12 @@ const Hero = () => {
           animate="animate"
           className="awards"
         >
-          <motion.h2 variants={awardVariants}>Welcome To SimpliFit</motion.h2>
+          <motion.h2
+            variants={awardVariants}
+            style={{ lineHeight: "1", marginBottom: "0" }} // Ensures no extra space
+          >
+            Welcome To SimpliFit
+          </motion.h2>
           {/* <motion.h2 variants={awardVariants}>Welcome to Simplifit – Your Partner in Corporate Wellness
       </motion.h2> */}
 
