@@ -12,7 +12,7 @@ const Speech = () => {
         <TypeAnimation
           sequence={[
             1000,
-            "Chartered Accountant and Fitness Coach \n\nStrengthening your Wealth, Strengthening your Health ",
+            "Chartered Accountant and Fitness Coach \n\nEmpowering the Workplace with Fitness & Events",
             // 1000,
             // "Strengthing your Wealth, Strengthening your Health",
             // 1000,

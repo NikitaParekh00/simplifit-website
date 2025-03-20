@@ -140,7 +140,7 @@ const Hero = () => {
             <img src="/call.png" alt="Call" />
           </motion.a>
           <motion.div variants={followVariants} className="followTextContainer">
-            <div className="followText">FOLLOW ME</div>
+            <div className="followText">CONTACT US</div>
           </motion.div>
         </motion.div>
         {/* BUBBLE */}
@@ -159,7 +159,7 @@ const Hero = () => {
           COACH
         </motion.div> */}
         {/* CONTACT BUTTON */}
-        <motion.a
+        {/* <motion.a
           href="/#contact"
           className="contactLink"
           animate={{
@@ -170,7 +170,7 @@ const Hero = () => {
             duration: 2,
           }}
         >
-          <motion.div
+          {/* <motion.div
             className="contactButton"
             animate={{ rotate: [0, 360] }}
             transition={{
@@ -209,8 +209,8 @@ const Hero = () => {
                 <polyline points="9 6 18 6 18 15" />
               </svg>
             </div>
-          </motion.div>
-        </motion.a>
+          </motion.div> */}
+        {/* </motion.a> */}
       </div>
       <div className="bg">
         {/* 3d */}
