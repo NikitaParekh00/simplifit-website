@@ -24,20 +24,20 @@ const items = [
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
     link: "/",
   },
-  {
-    id: 4,
-    img: "/p4.jpg",
-    title: "J.Kala & Associates",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
-  {
-    id: 5,
-    img: "/p5.jpg",
-    title: "Simplifit Cricket Tournament Season 1",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
+  // {
+  //   id: 4,
+  //   img: "/p4.jpg",
+  //   title: "J.Kala & Associates",
+  //   desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+  //   link: "/",
+  // },
+  // {
+  //   id: 5,
+  //   img: "/p5.jpg",
+  //   title: "Simplifit Cricket Tournament Season 1",
+  //   desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+  //   link: "/",
+  // },
   // {
   //   id: 6,
   //   img: "/p5.jpg",
@@ -158,13 +158,13 @@ const Portfolio = () => {
   return (
     <div className="portfolio" ref={ref}>
       <motion.div className="pList" style={{ x: xTranslate }}>
-        <div
+        {/* <div
           className="empty"
           style={{
             width: window.innerWidth - containerDistance,
             // backgroundColor: "pink",
           }}
-        />
+        /> */}
         {items.map((item) => (
           <ListItem item={item} key={item.id} />
         ))}

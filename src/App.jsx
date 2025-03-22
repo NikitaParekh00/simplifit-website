@@ -29,21 +29,21 @@ const App = () => {
             <Services />
           </section>{" "}
         </LazyLoad>
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"600vh"} offset={-100}>
-          {/* <section id="portfolio"> */}
-      {/* <Portfolio /> */}
-      {/* </section>{" "} */}
-      {/* </LazyLoad> */}
-      {/* </Suspense>
-      <Suspense fallback={"loading..."}>
+          <section id="portfolio">
+            <Portfolio />
+          </section>{" "}
+        </LazyLoad>
+      </Suspense>
+      {/* <Suspense fallback={"loading..."}>
         <LazyLoad height={"100vh"} offset={-100}>
           <section id="contact">
             <Contact />
           </section>{" "}
         </LazyLoad>
-      </Suspense> */}
+      </Suspense>{" "} */}
     </div>
   );
 };
