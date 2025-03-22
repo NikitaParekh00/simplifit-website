@@ -1,202 +1,133 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./portfolio.css";
-import { motion, useInView, useScroll, useTransform } from "motion/react";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const items = [
   {
     id: 1,
-    img: "/p1.jpg",
+    video: "/rbi.mp4",
     title: "Enforcement Dept, Reserve Bank of India",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
   },
-  {
-    id: 2,
-    img: "/p2.jpg",
-    title: "Witty Hostel, Witty Group",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
-  {
-    id: 3,
-    img: "/p3.jpg",
-    title: "Enmaac Advisors",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
-  // {
-  //   id: 4,
-  //   img: "/p4.jpg",
-  //   title: "J.Kala & Associates",
-  //   desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-  //   link: "/",
-  // },
-  // {
-  //   id: 5,
-  //   img: "/p5.jpg",
-  //   title: "Simplifit Cricket Tournament Season 1",
-  //   desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-  //   link: "/",
-  // },
-  // {
-  //   id: 6,
-  //   img: "/p5.jpg",
-  //   title: "Adinath Digambar Jain Mandir - Cricket Tournament",
-  //   desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-  //   link: "/",
-  // },
-  // {
-  //   id: 7,
-  //   img: "/p5.jpg",
-  //   title: "Sanmati Valuation",
-  //   desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-  //   link: "/",
-  // },
+  { id: 2, video: "/v2.mp4", title: "Witty Hostel, Witty Group" },
+  { id: 3, video: "/v3.mp4", title: "Enmaac Advisors" },
 ];
 
-const imgVariants = {
-  initial: {
-    x: -500,
-    y: 500,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const textVariants = {
-  initial: {
-    x: 500,
-    y: 500,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-      staggerChildren: 0.05,
-    },
-  },
-};
-
-const ListItem = ({ item }) => {
-  const ref = useRef();
-
-  const isInView = useInView(ref, { margin: "-100px" });
-
-  return (
-    <div className="pItem" ref={ref}>
-      <motion.div
-        variants={imgVariants}
-        animate={isInView ? "animate" : "initial"}
-        className="pImg"
-      >
-        <img src={item.img} alt="" />
-      </motion.div>
-      <motion.div
-        variants={textVariants}
-        animate={isInView ? "animate" : "initial"}
-        className="pText"
-      >
-        <motion.h1 variants={textVariants}>{item.title}</motion.h1>
-        <motion.p variants={textVariants}>{item.desc}</motion.p>
-        {/* <motion.a variants={textVariants} href={item.link}>
-          <button>View Project</button>
-        </motion.a> */}
-      </motion.div>
-    </div>
-  );
-};
-
 const Portfolio = () => {
-  const [containerDistance, setContainerDistance] = useState(0);
-  const ref = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [typedText, setTypedText] = useState("");
+  const fullText = "Recent Work";
+  const listRef = useRef(null);
 
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     const rect = ref.current.getBoundingClientRect();
-  //     setContainerDistance(rect.left);
-  //   }
-  // }, []);
-
-  // FIX: Re-calculate when screen size changes
   useEffect(() => {
-    const calculateDistance = () => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect();
-        setContainerDistance(rect.left);
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const type = () => {
+      if (!isDeleting) {
+        setTypedText(fullText.substring(0, charIndex));
+        charIndex++;
+        if (charIndex > fullText.length) {
+          isDeleting = true;
+          setTimeout(type, 1000); // Pause before deleting
+          return;
+        }
+      } else {
+        setTypedText(fullText.substring(0, charIndex));
+        charIndex--;
+        if (charIndex < 0) {
+          isDeleting = false;
+          setTimeout(type, 500); // Pause before retyping
+          return;
+        }
       }
+      setTimeout(type, isDeleting ? 100 : 150); // Speed adjustment
     };
 
-    calculateDistance();
-
-    window.addEventListener("resize", calculateDistance);
-
-    return () => {
-      window.removeEventListener("resize", calculateDistance);
-    };
+    type();
   }, []);
 
-  const { scrollYProgress } = useScroll({ target: ref });
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev < items.length - 1 ? prev + 1 : prev));
+  };
 
-  const xTranslate = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, -window.innerWidth * items.length]
-  );
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  };
 
   return (
-    <div className="portfolio" ref={ref}>
-      <motion.div className="pList" style={{ x: xTranslate }}>
-        {/* <div
-          className="empty"
-          style={{
-            width: window.innerWidth - containerDistance,
-            // backgroundColor: "pink",
-          }}
-        /> */}
-        {items.map((item) => (
-          <ListItem item={item} key={item.id} />
-        ))}
-      </motion.div>
-      <section />
-      <section />
-      <section />
-      <section />
-      <section />
-      <div className="pProgress">
-        <svg width="100%" height="100%" viewBox="0 0 160 160">
-          <circle
-            cx="80"
-            cy="80"
-            r="70"
-            fill="none"
-            stroke="#ddd"
-            strokeWidth={20}
-          />
-          <motion.circle
-            cx="80"
-            cy="80"
-            r="70"
-            fill="none"
-            stroke="#dd4c62"
-            strokeWidth={20}
-            style={{ pathLength: scrollYProgress }}
-            transform="rotate(-90 80 80)"
-          />
-        </svg>
+    <motion.div
+      className="portfolio"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      {/* Fixed Typing Effect on Title */}
+      <h1 className="pageTitle">{typedText}</h1>
+
+      <div className="carousel">
+        <motion.div
+          ref={listRef}
+          className="pList"
+          animate={{ x: `-${currentIndex * 100}%` }}
+          transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
+        >
+          {items.map((item, index) => (
+            <motion.div
+              className="pItem"
+              key={item.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{
+                opacity: index === currentIndex ? 1 : 0.5,
+                scale: index === currentIndex ? 1 : 0.95,
+              }}
+              transition={{ duration: 0.5 }}
+            >
+              <motion.div
+                className="pVideo"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <video
+                  src={item.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                />
+              </motion.div>
+              <motion.div
+                className="pText"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+              >
+                <h1>{item.title}</h1>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </div>
+
+      {/* Navigation Arrows (Below Content) */}
+      <div className="controls">
+        <button
+          className="arrow left"
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+        >
+          <ChevronLeft size={32} />
+        </button>
+        <button
+          className="arrow right"
+          onClick={handleNext}
+          disabled={currentIndex === items.length - 1}
+        >
+          <ChevronRight size={32} />
+        </button>
+      </div>
+    </motion.div>
   );
 };
 

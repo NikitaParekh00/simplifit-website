@@ -1,155 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+
+/* Portfolio Section */
 .portfolio {
-  height: 600vh;
+  position: relative;
+  /* width: 100vw; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(to right, #12071f, #210b3a);
+}
+
+/* Carousel Wrapper */
+.carousel {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
   position: relative;
 }
 
-/* .pList { */
-  /* min-height: 100vh;
-  position: sticky;
-  top: 0;
+/* List of Items */
+.pList {
   display: flex;
-  /* height: 100vh; */
-  /* width: max-content; */
-  
+  width: 100%;
+  height: 100%;
+}
 
-  .pList {
-    width: max-content; /* Allow items to be side by side */
-    display: flex;
-    flex-direction: row; /* ✅ Arrange items horizontally */
-    position: sticky;
-    top: 0;
-    height: 100vh;
-  }
-  
-
+/* Each Item */
 .pItem {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  flex: 0 0 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* .pItem:nth-child(1) {
-  background: linear-gradient(to right, #12071f, #210b3a);
-}
-.pItem:nth-child(2) {
-  background: linear-gradient(to right, #210b3a, #27084a);
-}
-.pItem:nth-child(3) {
-  background: linear-gradient(to right, #27084a, #220345);
-}
-.pItem:nth-child(4) {
-  background: linear-gradient(to right, #220345, #2a0159);
-}
-.pItem:nth-child(5) {
-  background: linear-gradient(to right, #2a0159, #12071f);
-} */
-
-/* WE'LL NOT GIVE BACKGROUND COLOR TO THE FIRST AND LAST ITEMS (to keep scrolling effect consistent) */
-.pItem:nth-child(3) {
-  background: linear-gradient(to right, transparent, #260622);
-}
-
-.pItem:nth-child(4) {
-  background: linear-gradient(to right, #260622, #02222e);
-}
-
-.pItem:nth-child(5) {
-  background: linear-gradient(to right, #02222e, #12071f);
-}
-
-.pItem:nth-child(6) {
-  background: linear-gradient(to right, #12071f, transparent);
-}
-
-.pProgress {
-  position: sticky;
-  width: 80px;
-  height: 80px;
-  left: 0;
-  bottom: 80%;
-}
-
-.pImg {
-  width: 40%;
+.pVideo {
+  width: 60%;
   border-radius: 20px;
   overflow: hidden;
 }
 
-.pImg img {
+.pVideo video {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .pText {
-  width: 40%;
+  width: 60%;
+  color: white;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 15px;
 }
 
 .pText h1 {
-  font-size: 56px;
+  font-size: 32px;
 }
 
 .pText p {
+  font-size: 16px;
   font-weight: 300;
 }
 
-.pText button {
-  background-color: pink;
-  padding: 12px;
-  border-radius: 10px;
+/* Controls (Arrows Below Content) */
+.controls {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px; /* Ensures arrows are below content */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.arrow {
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  font-weight: 500;
+  padding: 12px;
+  border-radius: 50%;
   cursor: pointer;
+  transition: 0.3s ease;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative !important;
 }
 
-@media (max-width: 1536px) {
-  .pItem {
-    gap: 50px;
-  }
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 1280px) {
-  .pText h1 {
-    font-size: 48px;
-  }
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .pItem {
-    flex-direction: column;
+  .pVideo {
+    width: 80%;
   }
 
-  .pImg,
   .pText {
     width: 80%;
   }
 
-  .pProgress {
-    bottom: 100px;
-    left: 100%;
+  .pText h1 {
+    font-size: 28px;
+  }
+
+  .controls {
+    gap: 15px;
   }
 }
 
 @media (max-width: 768px) {
-  .pProgress {
-    width: 50px;
-    height: 50px;
-    top:0
+  .pText h1 {
+    font-size: 24px;
   }
-  /* .pItem {
-    flex-direction: column;
-    gap: 20px;
-  } */
 
-  .pImg,
-  .pText {
-    width: 90%;
+  .pText p {
+    font-size: 14px;
+  }
+
+  .controls {
+    margin-bottom: 15px;
+  }
+
+  .arrow {
+    padding: 8px;
+  }
+}
+/* Page Title */
+.pageTitle {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  height: 60px; /* Fixed height to prevent movement */
+  position: relative; /* Ensures it stays in place */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 38px;
+    height: 50px; /* Adjusted for mobile */
+    /* margin-bottom: 20px; */
+    margin-top: 10px;
   }
 }
