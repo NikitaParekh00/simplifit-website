@@ -23,13 +23,13 @@ const App = () => {
           </section>
         </LazyLoad>
       </Suspense>
-      {/* <Suspense fallback={"loading..."}>
+      <Suspense fallback={"loading..."}>
         <LazyLoad height={"100vh"} offset={-100}>
           <section id="services">
             <Services />
           </section>{" "}
         </LazyLoad>
-      </Suspense> */}
+      </Suspense>
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"600vh"} offset={-100}>
           <section id="portfolio">

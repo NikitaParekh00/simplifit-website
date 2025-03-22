@@ -1,39 +1,23 @@
+import ParticlesBackground from "../portfolio/ParticlesBackground";
 import ComputerModelContainer from "./computer/ComputerModelContainer";
 import ConsoleModelContainer from "./console/ConsoleModelContainer";
 import Counter from "./Counter";
 import MugModelContainer from "./mug/MugModelContainer";
 import "./services.css";
-import { motion, useInView } from "motion/react";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
 const textVariants = {
-  initial: {
-    x: -100,
-    y: -100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-    },
-  },
+  initial: { x: -100, y: -100, opacity: 0 },
+  animate: { x: 0, y: 0, opacity: 1, transition: { duration: 1 } },
 };
 
 const listVariants = {
-  initial: {
-    x: -100,
-    opacity: 0,
-  },
+  initial: { x: -100, opacity: 0 },
   animate: {
     x: 0,
     opacity: 1,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.5,
-    },
+    transition: { duration: 1, staggerChildren: 0.5 },
   },
 };
 
@@ -44,12 +28,7 @@ const services = [
     title: "Corporate Stretching Session",
     counter: 35,
   },
-  {
-    id: 2,
-    img: "/service2.png",
-    title: "Nutrition Consultation",
-    counter: 23,
-  },
+  { id: 2, img: "/service2.png", title: "Nutrition Consultation", counter: 23 },
   {
     id: 3,
     img: "/service3.png",
@@ -92,10 +71,12 @@ const Services = () => {
   const [currentServiceId, setCurrentServiceId] = useState(1);
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-200px" });
+
   return (
     <div className="services" ref={ref}>
-      <div className="sSection left"
-      >
+      <ParticlesBackground />
+
+      <div className="sSection left">
         <motion.h1
           variants={textVariants}
           animate={isInView ? "animate" : "initial"}
@@ -103,17 +84,23 @@ const Services = () => {
         >
           How do I help?
         </motion.h1>
+
         <motion.div
           variants={listVariants}
           animate={isInView ? "animate" : "initial"}
           className="serviceList"
         >
-          {services.map((service) => (
+          {services.map((service, index) => (
             <motion.div
-              variants={listVariants}
-              className="service"
               key={service.id}
+              className={`service ${
+                currentServiceId === service.id ? "active" : ""
+              }`}
               onClick={() => setCurrentServiceId(service.id)}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
             >
               <div className="serviceIcon">
                 <img src={service.img} alt="" />
@@ -125,11 +112,13 @@ const Services = () => {
             </motion.div>
           ))}
         </motion.div>
+
         <div className="counterList">
           <Counter from={0} to={104} text="Projects Completed" />
           <Counter from={0} to={72} text="Happy Clients" />
         </div>
       </div>
+
       <div className="sSection right">
         {currentServiceId === 1 ? (
           <ComputerModelContainer />

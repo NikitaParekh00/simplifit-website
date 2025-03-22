@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import "./portfolio.css";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ParticlesBackground from "./ParticlesBackground";
 
 const items = [
   {
@@ -62,9 +63,9 @@ const Portfolio = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
+      {/* <ParticlesBackground /> Ad  d Particles Here */}
       {/* Fixed Typing Effect on Title */}
       <h1 className="pageTitle">{typedText}</h1>
-
       <div className="carousel">
         <motion.div
           ref={listRef}
@@ -109,7 +110,6 @@ const Portfolio = () => {
           ))}
         </motion.div>
       </div>
-
       {/* Navigation Arrows (Below Content) */}
       <div className="controls">
         <button
