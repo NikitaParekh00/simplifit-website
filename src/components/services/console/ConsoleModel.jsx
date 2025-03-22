@@ -1,16 +1,22 @@
 import { useGLTF } from "@react-three/drei";
+import { useEffect } from "react";
 
 export function ConsoleModel(props) {
-  const { nodes, materials } = useGLTF("/dumbleModel.glb");
+  const { scene } = useGLTF("/dumbleModel.glb");
+
+  // Debugging: Check what’s inside the model
+  useEffect(() => {
+    console.log("GLTF Scene:", scene);
+  }, [scene]);
 
   return (
-    <group {...props} dispose={null} scale={[0.05, 0.05, 0.05]} position={[0, -1, 0]}>
-      {nodes?.Object_2 && (
-        <mesh geometry={nodes.Object_2.geometry} material={materials?.wire_008008136} />
-      )}
-      {nodes?.Object_3 && (
-        <mesh geometry={nodes.Object_3.geometry} material={materials?.wire_008008136} />
-      )}
+    <group
+      {...props}
+      scale={[0.2, 0.2, 0.2]}
+      position={[0, -1, 0]}
+      rotation={[0, Math.PI, 0]}
+    >
+      <primitive object={scene} />
     </group>
   );
 }

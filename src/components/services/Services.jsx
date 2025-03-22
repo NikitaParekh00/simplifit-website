@@ -35,36 +35,6 @@ const services = [
     title: "Corporate Fitness Activity",
     counter: 46,
   },
-  {
-    id: 4,
-    img: "/service2.png",
-    title: "Corporate Team Bonding Activities",
-    counter: 23,
-  },
-  {
-    id: 5,
-    img: "/service3.png",
-    title: "Outdoor Wellness Sessions",
-    counter: 46,
-  },
-  {
-    id: 6,
-    img: "/service3.png",
-    title: "Workplace Wellness Programs",
-    counter: 46,
-  },
-  {
-    id: 7,
-    img: "/service3.png",
-    title: "Health and Wellness Retreats",
-    counter: 46,
-  },
-  {
-    id: 8,
-    img: "/service3.png",
-    title: "Inter-company tournaments",
-    counter: 46,
-  },
 ];
 
 const Services = () => {
@@ -74,7 +44,7 @@ const Services = () => {
 
   return (
     <div className="services" ref={ref}>
-      <ParticlesBackground />
+      {/* <ParticlesBackground /> */}
 
       <div className="sSection left">
         <motion.h1
@@ -107,7 +77,7 @@ const Services = () => {
               </div>
               <div className="serviceInfo">
                 <h2>{service.title}</h2>
-                <h3>{service.counter} Events</h3>
+                {/* <h3>{service.counter} Events</h3> */}
               </div>
             </motion.div>
           ))}
