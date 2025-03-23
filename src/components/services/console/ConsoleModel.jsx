@@ -1,24 +1,48 @@
 import { useGLTF } from "@react-three/drei";
-import { useEffect } from "react";
+import { useFrame } from "@react-three/fiber";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 export function ConsoleModel(props) {
-  const { scene } = useGLTF("/dumbleModel.glb");
+  const { scene, materials, animations } = useGLTF("/pushupnew.glb");
+  const modelRef = useRef();
+  const mixerRef = useRef();
 
-  // Debugging: Check what’s inside the model
   useEffect(() => {
-    console.log("GLTF Scene:", scene);
-  }, [scene]);
+    console.log("Loaded Scene:", scene);
+    console.log("Loaded Materials:", materials);
+
+    if (animations.length > 0) {
+      mixerRef.current = new THREE.AnimationMixer(scene);
+      animations.forEach((clip) => {
+        const action = mixerRef.current.clipAction(clip);
+        action.play();
+      });
+    }
+
+    // Ensure materials are correctly applied
+    scene.traverse((obj) => {
+      if (obj.isMesh && obj.material) {
+        obj.material.side = THREE.DoubleSide; // Fix transparency issues
+      }
+    });
+  }, [animations, scene]);
+
+  useFrame((_, delta) => {
+    if (mixerRef.current) {
+      mixerRef.current.update(delta);
+    }
+  });
 
   return (
-    <group
-      {...props}
-      scale={[0.2, 0.2, 0.2]}
+    <primitive
+      ref={modelRef}
+      object={scene}
+      scale={50}
       position={[0, -1, 0]}
-      rotation={[0, Math.PI, 0]}
-    >
-      <primitive object={scene} />
-    </group>
+      {...props}
+    />
   );
 }
 
-useGLTF.preload("/dumbleModel.glb");
+useGLTF.preload("/pushupnew.glb");
