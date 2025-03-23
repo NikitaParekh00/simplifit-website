@@ -28,7 +28,12 @@ const services = [
     title: "Corporate Stretching Session",
     counter: 35,
   },
-  { id: 2, img: "/service2.png", title: "Nutrition Consultation", counter: 23 },
+  {
+    id: 2,
+    img: "/service2.png",
+    title: "Corporate Team Bonding Event",
+    counter: 23,
+  },
   {
     id: 3,
     img: "/service3.png",
@@ -84,8 +89,8 @@ const Services = () => {
         </motion.div>
 
         <div className="counterList">
-          <Counter from={0} to={104} text="Projects Completed" />
-          <Counter from={0} to={72} text="Happy Clients" />
+          <Counter from={500} to={1000} text="Total Participants" />
+          {/* <Counter from={0} to={72} text="Happy Clients" /> */}
         </div>
       </div>
 
