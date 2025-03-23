@@ -1,0 +1,27 @@
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #12071f, #210b3a); /* Simplifit colors */
+  }
+  
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid transparent;
+    border-top: 5px solid #fafaf8; /* Yellow - Simplifit Theme */
+    border-right: 5px solid #e62f06; /* Orange - Simplifit Theme */
+    border-radius: 50%;
+  }
+  
+  .loader-text {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  

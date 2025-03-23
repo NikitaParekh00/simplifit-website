@@ -146,7 +146,7 @@
   font-weight: bold;
   color: white;
   text-align: center;
-  font-family: 'Dancing Script', cursive;
+  /* font-family: 'Dancing Script', cursive; */
   height: 60px; /* Fixed height to prevent movement */
   position: relative; /* Ensures it stays in place */
   overflow: hidden;

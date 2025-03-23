@@ -71,10 +71,10 @@
 }
 
 .service.active {
-  background: linear-gradient(45deg, #ff1e00, #ff5733);
+  background: linear-gradient(45deg, rgb(194, 17, 17), rgb(194, 17, 17));
   color: white;
   transform: scale(1.05);
-  box-shadow: 0px 5px 15px rgba(255, 200, 0, 0.5);
+  box-shadow: 0px 5px 15px white;
 }
 
 @media (max-width: 1024px) {
