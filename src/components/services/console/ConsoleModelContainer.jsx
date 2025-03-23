@@ -8,24 +8,15 @@ const ConsoleModelContainer = () => {
     <div className="model-container">
       <Canvas>
         <Suspense fallback="loading...">
-          {/* Increased Lights */}
+          {/* Improve Lighting */}
           <ambientLight intensity={3} />
           <directionalLight position={[5, 5, 5]} intensity={3} />
-          <spotLight position={[0, 5, 0]} angle={0.5} intensity={3} />
-
-          {/* Scale Fix for Small Model */}
-          <ConsoleModel scale={2} position={[0, -1.5, 0]} />
-
+          <spotLight position={[0, 5, 5]} angle={0.3} intensity={3} />
+          {/* Model */}
+          <ConsoleModel position={[0, 0.3, 0]} /> // Move model slightly up
+          {/* Camera Fix */}
           <OrbitControls enableZoom={true} autoRotate />
-
-          {/* Move Camera Closer */}
-          <PerspectiveCamera
-            position={[0, 1, 3]}
-            zoom={1.5}
-            makeDefault
-            near={0.1}
-            far={100}
-          />
+          <PerspectiveCamera position={[0, 2, 5]} zoom={2.5} makeDefault />
         </Suspense>
       </Canvas>
     </div>

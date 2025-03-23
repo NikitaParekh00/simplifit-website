@@ -4,13 +4,12 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 export function ConsoleModel(props) {
-  const { scene, materials, animations } = useGLTF("/pushupnew.glb");
+  const { scene, animations } = useGLTF("/pushupnew.glb");
   const modelRef = useRef();
   const mixerRef = useRef();
 
   useEffect(() => {
     console.log("Loaded Scene:", scene);
-    console.log("Loaded Materials:", materials);
 
     if (animations.length > 0) {
       mixerRef.current = new THREE.AnimationMixer(scene);
@@ -38,8 +37,8 @@ export function ConsoleModel(props) {
     <primitive
       ref={modelRef}
       object={scene}
-      scale={50}
-      position={[0, -1, 0]}
+      scale={8} // Adjust scale for better visibility
+      position={[0, -0.5, 0]} // Adjust to keep model above ground
       {...props}
     />
   );
