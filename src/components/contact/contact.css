@@ -2,6 +2,8 @@
   height: 100%;
   display: flex;
   gap: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
 .cSection {
@@ -20,48 +22,34 @@
   border-radius: 50% 0px;
 }
 
-form {
-  width: 80%;
+.follow {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-  background-color: rgba(2, 2, 45, 0.066);
-  padding: 50px;
-  border-radius: 50px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Ensures icons stay visible */
 }
 
-input,
-textarea {
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
+.follow img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.formItem {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.follow img:hover {
+  transform: scale(1.2);
 }
 
-label {
-  font-size: 13px;
-}
-
-.formButton {
-  background-color: #dd4c62;
+.followTextContainer {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
   color: white;
-  padding: 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+  text-align: center;
 }
 
-@media (max-width: 1280px) {
-  .form {
-    width: 100%;
-  }
-}
-
+/* RESPONSIVE FIXES */
 @media (max-width: 1024px) {
   .contact {
     gap: 30px;
@@ -71,16 +59,26 @@ label {
 @media (max-width: 768px) {
   .contact {
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .cSection {
     width: 100%;
+    text-align: center;
   }
 
-  .cSection:first-child {
-    height: 70%;
+  .follow {
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
   }
-  .cSection:last-child {
-    height: 30%;
+
+  .follow img {
+    width: 40px;
+    height: 40px;
   }
+}
+.cTitle{
+  margin-top: 20px;
 }

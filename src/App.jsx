@@ -33,6 +33,13 @@ const App = () => {
           </section>
         </LazyLoad>
       </Suspense>
+      <Suspense fallback={<Loader />}>
+        <LazyLoad height={"600vh"} offset={-100}>
+          <section id="portfolio">
+            <Contact />
+          </section>
+        </LazyLoad>
+      </Suspense>
     </div>
   );
 };

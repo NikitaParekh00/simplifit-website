@@ -104,7 +104,7 @@
 
 canvas {
  width: auto !important;
-height: 700px !important;
+height: 500px !important;
 }
 .counterList {
   display: flex;
