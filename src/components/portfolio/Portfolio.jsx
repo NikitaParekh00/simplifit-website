@@ -66,7 +66,7 @@ const Portfolio = () => {
     >
       {/* <ParticlesBackground /> Ad  d Particles Here */}
       {/* Fixed Typing Effect on Title */}
-      <h1 className="pageTitle">{typedText}</h1>
+      <h1 className="pageTitle">Recent Work</h1>
       <div className="carousel">
         <motion.div
           ref={listRef}
