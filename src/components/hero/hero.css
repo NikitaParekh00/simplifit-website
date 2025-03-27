@@ -43,6 +43,7 @@
   /* color: pink; */
   color:rgb(194, 17, 17);
   padding: 0px;
+  text-wrap: nowrap;
 }
 
 .hTitle span {
@@ -267,7 +268,7 @@
     padding: 16px;
     background-color: #2f204e;
     border-bottom-right-radius: 10px;
-    bottom: 300px
+    bottom: 200px
   }
 
   .hero {
