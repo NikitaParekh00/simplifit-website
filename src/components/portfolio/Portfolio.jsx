@@ -10,8 +10,9 @@ const items = [
     video: "/rbi.mp4",
     title: "Enforcement Dept, Reserve Bank of India",
   },
-  { id: 2, video: "/v2.mp4", title: "Witty Hostel, Witty Group" },
-  { id: 3, video: "/v3.mp4", title: "Enmaac Advisors" },
+  { id: 2, video: "/video2.mp4", title: "Enmaac Advisors" },
+  { id: 3, video: "/video3.mp4", title: "Simplifit Turf Cricket Tournament" },
+  { id: 4, video: "/video4.mp4", title: "Witty Hostel" },
 ];
 
 const Portfolio = () => {
