@@ -25,8 +25,7 @@ const Contact = () => {
           variants={followVariants}
           initial="initial"
           animate="animate"
-          className="follow"
-          // viewport={{ once: false, amount: 0.2 }} // Ensures animation on scroll
+          className="contact-follow"
         >
           <motion.a
             variants={followVariants}
@@ -53,6 +52,11 @@ const Contact = () => {
       </div>
       <div className="cSection">
         <ContactSvg />
+      </div>
+
+      {/* Footer */}
+      <div className="footer">
+        Made with ❤️ by <span className="brand-name">HiddenLeaf</span>
       </div>
     </div>
   );
