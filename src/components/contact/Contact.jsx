@@ -65,7 +65,7 @@ const Contact = () => {
 
       {/* Footer - Made with ❤️ */}
       <div className="footer">
-        Made with ❤️ by
+        Made with ❤️ by{" "}
         <a
           href="https://www.hiddenleafventures.in/"
           target="_blank"
