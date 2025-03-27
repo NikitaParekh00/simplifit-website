@@ -1,14 +1,16 @@
+/* 🔹 Reset Styles */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* 🔹 Enable Smooth Scrolling */
 html {
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
+/* 🔹 Body Styling */
 body {
   background: linear-gradient(to bottom, #12071f, #2f204e);
   color: white;
@@ -18,11 +20,18 @@ body {
   overflow-x: hidden;
 }
 
+/* 🔹 Remove Scroll Snapping Effect */
+html {
+  scroll-snap-type: none;
+}
+
+/* 🔹 Links */
 a {
   text-decoration: none;
   color: white;
 }
 
+/* 🔹 Main Container */
 .container {
   max-width: 1536px;
   padding-left: 16px;
@@ -31,11 +40,12 @@ a {
   margin-right: auto;
 }
 
+/* 🔹 Sections - Full Screen */
 section {
   height: 100vh;
-  scroll-snap-align: center;
 }
 
+/* 🔹 Responsive Layout Adjustments */
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -64,4 +74,22 @@ section {
   .container {
     max-width: 1536px;
   }
+}
+
+/* 🔹 Scrollbar Customization (Optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2f204e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(194, 17, 17);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(150, 10, 10);
 }
