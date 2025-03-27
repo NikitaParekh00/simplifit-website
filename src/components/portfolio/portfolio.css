@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
-
 /* Portfolio Section */
 .portfolio {
   position: relative;
-  /* width: 100vw; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,17 +27,18 @@
   height: 100%;
 }
 
-/* Each Item */
+/* Each Item - Default (for mobile: stacked layout) */
 .pItem {
   flex: 0 0 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Default: stacked layout */
   align-items: center;
   justify-content: center;
   gap: 20px;
   transition: transform 0.5s ease-in-out;
 }
 
+/* Video Section */
 .pVideo {
   width: 60%;
   border-radius: 20px;
@@ -53,6 +52,7 @@
   border-radius: 20px;
 }
 
+/* Text Section */
 .pText {
   width: 60%;
   color: white;
@@ -75,7 +75,7 @@
 .controls {
   display: flex;
   gap: 20px;
-  margin-top: 20px; /* Ensures arrows are below content */
+  margin-top: 20px;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -104,7 +104,30 @@
   cursor: not-allowed;
 }
 
-/* Responsive Adjustments */
+/* 🔹 Desktop Layout: Video Left, Text Right */
+@media (min-width: 1024px) {
+  .pItem {
+    flex-direction: row; /* Side-by-side layout */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+  }
+
+  .pVideo {
+    width: 45%;
+  }
+
+  .pVideo video {
+    width: 60%;
+  } 
+
+  .pText {
+    width: 35%;
+    text-align: left; /* Align text to the left */
+  }
+}
+
+/* 🔹 Responsive Adjustments */
 @media (max-width: 1024px) {
   .pVideo {
     width: 80%;
@@ -124,6 +147,10 @@
 }
 
 @media (max-width: 768px) {
+  .pItem {
+    flex-direction: column; /* Stack video & text on mobile */
+  }
+
   .pText h1 {
     font-size: 24px;
   }
@@ -140,27 +167,26 @@
     padding: 8px;
   }
 }
+
 /* Page Title */
 .pageTitle {
   font-size: 50px;
   font-weight: bold;
   color: white;
   text-align: center;
-  /* font-family: 'Dancing Script', cursive; */
   height: 60px; /* Fixed height to prevent movement */
-  position: relative; /* Ensures it stays in place */
+  position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Responsive Adjustments */
+/* 🔹 Responsive Adjustments for Page Title */
 @media (max-width: 768px) {
   .pageTitle {
     font-size: 38px;
-    height: 50px; /* Adjusted for mobile */
-    /* margin-bottom: 20px; */
+    height: 50px;
     margin-top: 10px;
   }
 }

@@ -102,10 +102,12 @@
   object-fit: contain; /* Ensure it fits well */
 }
 
-canvas {
- width: auto !important;
-height: 400px !important;
+/* Ensure Canvas Styling Applies ONLY in the Services Section */
+.services canvas {
+  width: auto !important;
+  height: 400px !important;
 }
+
 .counterList {
   display: flex;
   justify-content: center;
