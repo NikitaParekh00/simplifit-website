@@ -65,7 +65,15 @@ const Contact = () => {
 
       {/* Footer - Made with ❤️ */}
       <div className="footer">
-        Made with ❤️ by <span className="brand-name">HiddenLeaf</span>
+        Made with ❤️ by
+        <a
+          href="https://www.hiddenleafventures.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="brand-name"
+        >
+          HiddenLeaf
+        </a>
       </div>
     </div>
   );
